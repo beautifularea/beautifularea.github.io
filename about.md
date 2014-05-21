@@ -7,16 +7,16 @@ title: About
 coming soon....
 
 
-<!-- <ul class="posts">
+<ul class="posts">
   <li>
-	  Weibo:
+	  weibo:
     <a href="http://weibo.com/beautifularea/" rel="external nofollow" target="_blank" class="muted">@beautifularea</a>
 	
 	<br/>
 	
-      Github:
-    <a href="http://github.com/beautifularea" rel="external nofollow" target="_blank" class="muted">@github</a>
+      <!-- Github:
+    <a href="http://github.com/beautifularea" rel="external nofollow" target="_blank" class="muted">@github</a> -->
   </li>
-</ul> -->
+</ul>
 
 

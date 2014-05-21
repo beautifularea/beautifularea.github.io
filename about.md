@@ -3,7 +3,7 @@ layout: page
 title: About
 ---
 You have a nice day. ♥
-<br/>
+<!-- <br/> -->
 
 <ul class="posts">
   <li>

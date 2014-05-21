@@ -1,7 +1,7 @@
 title:            beautifularea
-description:      A jekyll theme. Because I scribble.
+description:      美丽的流域
 url:              http://beautifularea.github.io
-signoff:          # Your name.
+signoff:          beautifularea
 disqus_shortname: # disqus comment thread for post header options. ( leave blank if unwanted. )
 facebook_appid:   # appid for like button, remove from /_includes/share.html if unwanted.
 google_analytics: # set tracking, remove from /javascripts/basic.js if unwanted.
@@ -10,14 +10,7 @@ links:
   - name:         About
     url:          /about
   - name:         Blog
-    url:          /http://muan.co
-    external:     true
-  - name:         Email
-    url:          mailto:beautifularea@163.com
-    external:     true
-  - name:         GitHub
-    url:          http://github.com/beautifularea
-    external:     true
+    url:          /
 pygments:         true
 permalink:        pretty
 markdown:         redcarpet

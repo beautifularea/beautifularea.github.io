@@ -2,9 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>beautifularea</title>
-    <description>A jekyll theme. Because I scribble.</description>
-    <link></link>
-    <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
+    <description>美丽的流域</description>
+    <link>http://beautifularea.github.io</link>
+    <atom:link href="http://beautifularea.github.io/feed.xml" rel="self" type="application/rss+xml" />
+    
+      <item>
+        <title>beautifularea</title>
+        <description>&lt;p&gt;第一个[界面]，不说页面！！！&lt;/p&gt;
+</description>
+        <pubDate>Wed, 21 May 2014 20:39:31 +0800</pubDate>
+        <link>http://beautifularea.github.io/2014/05/21/test/</link>
+        <guid isPermaLink="true">http://beautifularea.github.io/2014/05/21/test/</guid>
+      </item>
     
       <item>
         <title>Scribble, a Jekyll theme</title>
@@ -71,8 +80,8 @@ Date is not a required header since Jekyll reads the file name for date, this wa
 Problem? &lt;a href=&quot;https://github.com/muan/scribble&quot;&gt;Use GitHub Issues&lt;/a&gt;.&lt;/p&gt;
 </description>
         <pubDate>Tue, 07 May 2013 00:27:31 +0800</pubDate>
-        <link>/2013/05/07/scribble-the-jekyll-theme/</link>
-        <guid isPermaLink="true">/2013/05/07/scribble-the-jekyll-theme/</guid>
+        <link>http://beautifularea.github.io/2013/05/07/scribble-the-jekyll-theme/</link>
+        <guid isPermaLink="true">http://beautifularea.github.io/2013/05/07/scribble-the-jekyll-theme/</guid>
       </item>
     
       <item>
@@ -106,8 +115,8 @@ Problem? &lt;a href=&quot;https://github.com/muan/scribble&quot;&gt;Use GitHub I
 &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 </description>
         <pubDate>Mon, 06 May 2013 23:27:31 +0800</pubDate>
-        <link>/2013/05/06/more-post/</link>
-        <guid isPermaLink="true">/2013/05/06/more-post/</guid>
+        <link>http://beautifularea.github.io/2013/05/06/more-post/</link>
+        <guid isPermaLink="true">http://beautifularea.github.io/2013/05/06/more-post/</guid>
       </item>
     
   </channel>

@@ -1,0 +1,7 @@
+---
+layout: post
+title: Placeholder post
+date: 2014-05-21 12:39:31
+---
+
+第一个界面，不说页面！！！

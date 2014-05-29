@@ -1,0 +1,154 @@
+<html>
+  <head>
+    <meta content='通过appid获取app的信息 - beautifularea's blog' property='og:title' />
+    <title>通过appid获取app的信息 - beautifularea's blog</title>
+    <link href='/images/fav.png' rel='shortcut icon'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css' />
+<link href='/stylesheets/style.css' rel='stylesheet' type='text/css' />
+<link href='/stylesheets/syntax.css' rel='stylesheet' type='text/css' />
+<link href='/stylesheets/responsive.css' rel='stylesheet' type='text/css' />
+<!-- - -->
+<script src='/javascripts/jquery.js' type='text/javascript'></script>
+<script src='/javascripts/pd.js' type='text/javascript'></script>
+<script src='/javascripts/basics.js' type='text/javascript'></script>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<!-- - -->
+<meta content='width=device-width, initial-scale=1.0, user-scalable=no' name='viewport'>
+<meta content='text/html; charset=utf-8' http-equiv='content-type' />
+<meta content="http://muan.co/images/og.png" property="og:image" />
+<meta content="" property="fb:app_id" />
+
+  <meta content='http://beautifularea.github.io/2014/05/30/appid/' property='og:url' />
+  <meta content="以高德地图为例：{% highlight objective-c %}	NSString *appid = @"461703208";	NSString *requestUrlString = [NSString stringWith..." property='og:description' />
+  <meta content="article" property="og:type" />
+
+<!-- - -->
+<script type='text/javascript'>
+  //<![CDATA[
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', '']);
+    _gaq.push(['_trackPageview']);
+    
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  //]]>
+</script>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=604714799556697";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+  </head>
+  <body>
+    <header>
+<a id="go-back-home" href="/"><img src="/images/scribble.png" alt="scribble" width="53" height="59"></a>
+<p>beautifularea's blog</p>
+</header>
+    <div id='container'>
+      <div class="block">
+  
+    <a target="_top" class="main" href="/about">About</a>
+  
+    <a target="_top" class="main" href="/">Blog</a>
+  
+</div>
+      <section class="paging">
+  
+    <div class="left">
+      <a href="/2014/05/22/sailling/">
+        ‹
+      </a>
+    </div>
+  
+  
+</section>
+      <div class="content">
+        <section class='post'>
+          <h1 class="upcase">
+            <div class='date'>30 May 2014</div>
+            通过appid获取app的信息
+          </h1>
+          <p>以高德地图为例：</p>
+
+<div class="highlight"><pre><code class="objective-c"><span class="n">NSString</span> <span class="o">*</span><span class="n">appid</span> <span class="o">=</span> <span class="s">@&quot;461703208&quot;</span><span class="p">;</span>
+    <span class="n">NSString</span> <span class="o">*</span><span class="n">requestUrlString</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSString</span> <span class="n">stringWithFormat</span><span class="o">:</span> <span class="s">@&quot;https://itunes.apple.com/lookup?id=%@&quot;</span><span class="p">,</span> <span class="n">appid</span><span class="p">];</span>
+    <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;requestUrlString = %@&quot;</span><span class="p">,</span> <span class="n">requestUrlString</span><span class="p">);</span>
+    <span class="n">NSURLResponse</span> <span class="o">*</span><span class="n">response</span> <span class="o">=</span> <span class="nb">nil</span><span class="p">;</span>
+    <span class="n">NSError</span> <span class="o">*</span><span class="n">connectionError</span> <span class="o">=</span> <span class="nb">nil</span><span class="p">;</span>
+    <span class="n">NSMutableURLRequest</span> <span class="o">*</span><span class="n">request</span> <span class="o">=</span> <span class="p">[[</span><span class="n">NSMutableURLRequest</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">request</span> <span class="n">setURL</span><span class="o">:</span><span class="p">[</span><span class="n">NSURL</span> <span class="n">URLWithString</span><span class="o">:</span><span class="n">requestUrlString</span><span class="p">]];</span>
+    <span class="p">[</span><span class="n">request</span> <span class="n">setTimeoutInterval</span><span class="o">:</span><span class="mf">20.0f</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">request</span> <span class="n">setCachePolicy</span><span class="o">:</span><span class="n">NSURLRequestReturnCacheDataElseLoad</span><span class="p">];</span>
+    <span class="n">NSData</span> <span class="o">*</span><span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSURLConnection</span> <span class="n">sendSynchronousRequest</span><span class="o">:</span><span class="n">request</span>
+                                           <span class="nl">returningResponse:</span><span class="o">&amp;</span><span class="n">response</span>
+                                                       <span class="nl">error:</span><span class="o">&amp;</span><span class="n">connectionError</span><span class="p">];</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">connectionError</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">dispatch_async</span><span class="p">(</span><span class="n">dispatch_get_main_queue</span><span class="p">(),</span> <span class="o">^</span><span class="p">{</span>
+        <span class="p">});</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">NSError</span> <span class="o">*</span><span class="n">jsonError</span> <span class="o">=</span> <span class="nb">nil</span><span class="p">;</span>
+        <span class="n">NSDictionary</span> <span class="o">*</span><span class="n">jsonDictionary</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSJSONSerialization</span> <span class="n">JSONObjectWithData</span><span class="o">:</span><span class="n">result</span>
+                                                                       <span class="nl">options:</span><span class="n">NSJSONReadingMutableContainers</span>
+                                                                         <span class="nl">error:</span><span class="o">&amp;</span><span class="n">jsonError</span><span class="p">];</span> 
+        <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;json = %@&quot;</span><span class="p">,</span> <span class="n">jsonDictionary</span><span class="p">);</span>
+    <span class="p">}</span></code></pre></div>
+
+<p><br/>
+ps. <a href="http://www.apple.com/itunes/affiliates/resources/documentation/itunes-store-web-service-search-api.html" target=”_blank”>Apple API 链接</a></p>
+
+          <br />
+<p>
+  <!-- Til next time,<br/> -->
+  beautifularea
+  <!-- <span class="muted">at 02:00</span> -->
+</p>
+<p>
+  <img src="/images/scribble3.png" alt="scribble" /> 
+</p>
+
+
+        </section>
+      </div>
+      
+
+      
+      <div class="block">
+  
+    <a target="_top" class="main" href="/about">About</a>
+  
+    <a target="_top" class="main" href="/">Blog</a>
+  
+</div>
+	  
+  	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="请将此处替换成文章在你的站点中的ID" data-title="请替换成文章的标题" data-url="请替换成文章的网址"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"beautifularea"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+
+    </div>
+    <footer>
+  <a href="" class="muted">Jekyll-Scribble theme</a>
+  <br />
+  <br />
+  <img src="/images/scribble2.png" alt="scribble" /> 
+</footer>
+  </body>
+</html>

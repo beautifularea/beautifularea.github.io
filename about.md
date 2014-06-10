@@ -2,7 +2,9 @@
 layout: page
 title: About
 ---
-You have a nice day. ♥
+
+记性不好，脑子记不住的就记录下来了。
+
 
 <!-- <ul class="posts">
   <li>

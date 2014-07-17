@@ -9,4 +9,4 @@ NSDateFormatter用法
 [formatter setDateFormat: @"yyyy-MM-dd HH:mm:ss"];
 NSString *curFormatter = [formatter stringFromDate:[NSDate date]];
 //show
-[curFormatter release];{% endhighlight %}
+[formatter release];{% endhighlight %}

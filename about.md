@@ -2,8 +2,7 @@
 layout: page
 title: About
 ---
-
-子曾经曰过
+子曾经曰过 : 记不住？那你还不记笔记！
 
 <!-- <ul class="posts">
   <li>

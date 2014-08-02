@@ -12,7 +12,8 @@ links:
     url:          /about
   - name:         Blog
     url:          /
-pygments:         true
+# pygments:         true
+highlighter:      pygments
 permalink:        pretty
 markdown:         redcarpet
 redcarpet:

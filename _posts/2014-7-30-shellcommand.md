@@ -56,5 +56,31 @@ control + u
 control + l /（clear）/ command + k
 {% endhighlight %}
 
+查看文件夹大小
+{% highlight Objective-C %}
+du -sh
+{% endhighlight %}
+
+发音
+{% highlight Objective-C %}
+say Hello,iOS
+{% endhighlight %}
+
+打开网络
+{% highlight Objective-C %}
+open http://wwwwwwwww.jodi.org
+{% endhighlight %}
+
+创建软连接
+{% highlight Objective-C %}
+ln [option] source_file dist_file
+ln -s rabbit_common-3.3.4 rabbit_common
+{% endhighlight %}
+
+删除软连接
+{% highlight Objective-C %}
+rm -rf rabbit_common
+{% endhighlight %}
+
 
 to be continued...

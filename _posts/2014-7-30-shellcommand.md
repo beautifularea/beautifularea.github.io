@@ -82,5 +82,11 @@ ln -s rabbit_common-3.3.4 rabbit_common
 rm -rf rabbit_common
 {% endhighlight %}
 
+分屏显示
+{% highlight Objective-C %}
+ls | less
+ls | more
+ls -t | more
+{% endhighlight %}
 
 to be continued...

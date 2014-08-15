@@ -99,6 +99,46 @@ if (!found) {
 }
 {% endhighlight %}
 
+<li>二分查找四：
+{% highlight Objective-C %}
+NSArray *array =[NSArray arrayWithObjects:
+                 @"aaronglyang",
+                 @"angellixf",
+                 @"wode211",
+                 @"ccsupport",
+                 @"luruzzz123",
+                 @"xiaoxiapipi",
+                 @"daojianmahun",
+                 @"cdx0062009",nil];
+
+NSArray *resultArray = [array sortedArrayUsingSelector:@selector(compare:)];//进行排序
+NSLog(@"%@",resultArray);
+
+int result = [self binarySearch:resultArray keyStr:@"luruzzz123"];//进行二分法查找
+if(result < 0)
+    NSLog(@"No Data!");
+else
+    NSLog(@"%d",result);
+//关键代码在这里
+-(int)binarySearch:(NSArray *)dataArray keyStr:(NSString *)key{
+    unsigned int low = 0;
+    unsigned int high = [dataArray count] - 1;
+    unsigned int mid = 0;
+    while (low <= high)
+    {
+        mid = (low + high) / 2;    
+        NSComparisonResult result = [[dataArray objectAtIndex:mid] compare:key options:NSLiteralSearch];
+        if (result == NSOrderedSame)
+            return (int)mid;
+        else if (result < 0)
+            low = mid + 1;
+        else
+            high = mid - 1;
+    }
+    return -1;
+}
+{% endhighlight %}
+
 参考：
 <a href="http://oleb.net/blog/2013/07/nsarray-binary-search/" rel="external nofollow" target="_blank" class="muted">NSArray Binary Search</a>
 <a href="http://www.getappninja.com/blog/implementing-a-binary-search-in-ios" rel="external nofollow" target="_blank" class="muted">How to Implement A Binary Search Algorithm in iOS</a>

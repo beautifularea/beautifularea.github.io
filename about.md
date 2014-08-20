@@ -2,8 +2,7 @@
 layout: page
 title: About
 ---
-
-About me.
+About me ? read my blogs.
 
 <!-- <ul class="posts">
   <li>

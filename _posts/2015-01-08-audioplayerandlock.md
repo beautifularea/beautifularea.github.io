@@ -69,7 +69,8 @@ _avPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
 [_avPlayer prepareToPlay];
 {% endhighlight %}
 
-4、显示歌曲信息
+4、显示歌曲信息<br/>
+_currentTime 为当前播放的时间。点击暂停时候，需要特殊设置一下，否则时间从0开始显示<br/>
 {% highlight Objective-C %}
 Class playingInfoCenter = NSClassFromString(@"MPNowPlayingInfoCenter");
 if (playingInfoCenter) {
@@ -80,6 +81,28 @@ if (playingInfoCenter) {
     [songInfo setObject:@"Audio Author" forKey:MPMediaItemPropertyArtist];
     [songInfo setObject:@"Audio Album" forKey:MPMediaItemPropertyAlbumTitle];
     [songInfo setObject:albumArt forKey:MPMediaItemPropertyArtwork];
+
+    CMTime play_second = CMTimeMake(_currentTime,1.0);
+    CMTime length = CMTimeMake(song.length, 1.0);
+    
+    NSLog(@"play_second = %f current time = %f", CMTimeGetSeconds(play_second), _currentTime);
+    
+    int type = [AL_XIAMIManager shareInstance].playStatus;
+    if([AL_XIAMIManager shareInstance].playStatus == XIAMI_Pause){
+        [dict setObject:[NSNumber numberWithDouble:CMTimeGetSeconds(CMTimeMakeWithSeconds(_currentTime, 1.0))]
+                 forKey:MPNowPlayingInfoPropertyElapsedPlaybackTime];
+        
+        [dict setObject:[NSNumber numberWithFloat:0.000001] forKey:MPNowPlayingInfoPropertyPlaybackRate];//进度光标的速度 （这个随 自己的播放速率调整，我默认是原速播放）
+        [dict setObject:[NSNumber numberWithDouble:CMTimeGetSeconds(length)] forKey:MPMediaItemPropertyPlaybackDuration];//歌曲总时间设置
+    }
+    else if(type == XIAMI_Playing){
+
+        [dict setObject:[NSNumber numberWithDouble:CMTimeGetSeconds(play_second)]
+                 forKey:MPNowPlayingInfoPropertyElapsedPlaybackTime]; //音乐当前已经播放时间
+        
+        [dict setObject:[NSNumber numberWithFloat:1.0] forKey:MPNowPlayingInfoPropertyPlaybackRate];//进度光标的速度 （这个随 自己的播放速率调整，我默认是原速播放）
+        [dict setObject:[NSNumber numberWithDouble:CMTimeGetSeconds(length)] forKey:MPMediaItemPropertyPlaybackDuration];//歌曲总时间设置
+    }
 
     [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:songInfo];
 }

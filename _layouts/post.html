@@ -17,14 +17,14 @@
           </h1>
           {{ content }}
           {% include signoff.html %}
-
-
         </section>
       </div>
       {% if page.share == 'y' %}
         {% include share.html %}
       {% endif %}
-
+	  
+	  {% include weibo.html %}
+	  
       {% if page.disqus == 'y' %}
         {% include disqus.html %}
       {% endif %}
